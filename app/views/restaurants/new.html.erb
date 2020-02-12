@@ -1,0 +1,15 @@
+<div class='container'>
+  <h1>Add a New Restaurant</h1>
+  <br>
+
+  <%= simple_form_for @restaurant do |f| %>
+    <%= f.input :name, label: 'Restaurant name', error: 'Name is mandatory, please specify one' %>
+    <%= f.input :address, label: 'Restaurant address', error: 'Address is mandatory, please specify one' %>
+    <%= f.input :phone_number, label: 'Restaurant phone number', error: 'Phone number is mandatory, please specify one' %>
+    <%= f.input :category, label: 'Restaurant category', collection: Restaurant::CATEGORIES %>
+    <%= f.submit "add a restaurant", class: "btn btn-primary" %>
+  <% end %>
+  <br>
+  <%= link_to 'Back to restaurants list', restaurants_path %>
+</div>
+
