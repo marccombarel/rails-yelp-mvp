@@ -1,0 +1,10 @@
+<div class='container'>
+  <h1>Write a new review on <%= @restaurant.name %></h1>
+  <br>
+
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :content, label: 'Your opinion', error: 'Opinion is mandatory, please specify one' %>
+    <%= f.input :rating, label: 'Rate', error: 'Rate is mandatory, please specify one' %>
+    <%= f.submit 'Add a review', class: 'btn btn-primary' %>
+  <% end %>
+</div>
